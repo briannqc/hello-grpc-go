@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package greet;
+
+option go_package = "github.com/briannqc/hello-grpc-go/greet/proto";
+
+message AddRequest {
+    int64 first = 1;
+    int64 second = 2;
+}
+
+message AddResponse {
+    int64 sum = 1;
+}
+
+service CalculatorService {
+    rpc Add (AddRequest) returns (AddResponse);
+}
